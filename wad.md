@@ -38,9 +38,9 @@ directory header and are contiguous.)
 Following the WAD header is the directory entry.
 
 | Pos | Size | Format | Description                                            |
-| ---:| ----:| ------ | -------------------------------------------------------|  
+| ---:| ----:| ------ | -------------------------------------------------------|
 |   0 |    1 | u8     | ECDSA signature length                                 |
-|   1 |   ^  |        | ECDSA signature of TOC padded with `0` until length 83 |
+|   1 |   83 |        | ECDSA signature of TOC padded with `0` until offset 83, the actual signature length is specified in the field above.                                                                   |
 |  84 |    8 | u64    | xxHash checksum                                        |
 |  92 |    2 | u16    | entry header offset                                    |
 |  94 |    2 | u16    | entry header size                                      |
