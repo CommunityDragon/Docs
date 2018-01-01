@@ -98,7 +98,9 @@ The following *compression types* are known:
 Paths of files in WAD archives are hashed using 64-bit
 [xxHash](http://cyan4973.github.io/xxHash/) with seed 0.
 Since paths are not stored in the archive in clear, they have to be guessed.
+Many guesses can be found by looking in some index `.json` files, grepping
+league binaries/memory dumps, and debugging the client.
 
-Hashed paths are all in lowercase. They usually use letters, digits and
-characters from `._-`. Rare occurrences also uses spaces and `@`.
+Hashed paths usually use lowercase letters, digits and
+characters from `._-/`. Rare occurrences also uses spaces, `@`, and uppercase letters.
 
