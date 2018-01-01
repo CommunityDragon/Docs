@@ -82,7 +82,7 @@ WAD versions 2 and 3 include all fields.
 |  12 |    4 | u32    | compressed size                        |
 |  16 |    4 | u32    | uncompressed size                      |
 |  20 |    1 | u8     | data type                              |
-|  21 |    1 | bool   | [is duplicated ?](#entry-duplication)  |
+|  21 |    1 | bool   | [is duplicated](#entry-duplication)  |
 |  22 |    2 | u16    | padding                                |
 |  24 |    8 | u64    | first 8 bytes of sha256 hash of data   |
 
