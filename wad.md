@@ -114,6 +114,6 @@ This is a technique to lower file sizes.
 
 If you jump to the offset of the entry, there is a `uint` specifying the length of the file redirection that follows it.
 
-The filre redirection is a string path.
+The file redirection is a string path.
 
 It tells the game to load the File Redirection file path instead of the one the xxHash specifies.
