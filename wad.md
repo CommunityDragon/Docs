@@ -99,10 +99,37 @@ The following *data types* are known:
 Paths of files in WAD archives are hashed using 64-bit
 [xxHash](http://cyan4973.github.io/xxHash/) with seed 0.
 Since paths are not stored in the archive in clear, they have to be guessed.
-Paths can also be restored from BIN files in the archive. This is a very good technique and will give you at least 70% of the unknown hashes.
 
 Hashed paths are all in lowercase. They usually use letters, digits and
 characters from `._-`. Rare occurrences also uses spaces and `@`.
+
+
+### Paths from LCU's WADs
+
+A list of reversed hashes is available [here](https://raw.githubusercontent.com/CommunityDragon/CDTB/master/cdragontoolbox/hashes.txt).
+
+Most paths use the following format: `plugins/<plugin>/<region>/<lang>/...`
+Where:
+ - `<plugin>` is the client plugin name
+ - `<region>` is a region name (e.g. `euw`), or `global`
+ - `<lang>` is a language code (e.g. `en_gb`), or `default`
+
+The plugin name matches the directory name in which a WAD can be found. For
+instance, for `.../plugins/rcp-fe-lol-missions/assets.wad`, the plugin is
+`rcp-fe-lol-missions`.
+
+The region/lang pair allows the client to use different files depending on the
+region and/or language. It is notably used for translations and censorship of
+some visuals (e.g. Grave's cigar).
+When retrieving an asset, the client starts by looking for a match with its
+specific region and/or language, then falls back to `global/default`.
+
+
+### Paths from game client's WADS
+
+Paths can be restored from BIN files in the archive. This technique will give
+at least 70% of the unknown hashes.
+
 
 ## Entry Duplication
 
