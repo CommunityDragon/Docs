@@ -81,15 +81,15 @@ WAD versions 2 and 3 include all fields.
 |   8 |    4 | u32    | data offset in the WAD archive         |
 |  12 |    4 | u32    | compressed size                        |
 |  16 |    4 | u32    | uncompressed size                      |
-|  20 |    1 | u8     | compression type                       |
+|  20 |    1 | u8     | data type                              |
 |  21 |    1 | bool   | [is duplicated ?](#entry-duplication)  |
 |  22 |    2 | u16    | padding                                |
 |  24 |    8 | u64    | first 8 bytes of sha256 hash of data   |
 
-The following *compression types* are known:
+The following *data types* are known:
 
  - `0` -- uncompressed data
- - `1` -- zlib
+ - `1` -- gzip
  - `2` -- [file redirection](#file-redirection)
  - `3` -- [Zstandard](http://facebook.github.io/zstd/)
 
@@ -116,4 +116,4 @@ If you jump to the offset of the entry, there is a `uint` specifying the length 
 
 The filre redirection is a string path.
 
-It tells the game to load the File Redirection file path instead of the one the XXHash specifies.
+It tells the game to load the File Redirection file path instead of the one the xxHash specifies.
