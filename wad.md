@@ -8,11 +8,11 @@ item description), files for the LCU's interface and more.
 
 The WAD file starts with the following header:
 
-| Offset | Format | Description                                |
-| ------:| ------ | ------------------------------------------ |
-|      0 | `RW`   | magic code                                 |
-|      2 | u8     | major version                              |
-|      3 | u8     | minor version                              |
+| Pos | Size | Format | Description                            |
+| ---:| ----:| ------ | -------------------------------------- |
+|   0 |    2 | `RW`   | magic code                             |
+|   2 |    1 | u8     | major version                          |
+|   3 |    1 | u8     | minor version                          |
 
 Parsing of following data depends on the major version.
 Latest known major version is 3.
@@ -37,14 +37,14 @@ directory header and are contiguous.)
 
 Following the WAD header is the directory entry.
 
-| Pos | Size | Format | Description                                            |
-| ---:| ----:| ------ | -------------------------------------------------------|
-|   0 |    1 | u8     | ECDSA signature length                                 |
-|   1 |   83 |        | ECDSA signature of TOC padded with `0` until offset 83, the actual signature length is specified in the field above.                                                                   |
-|  84 |    8 | u64    | xxHash checksum                                        |
-|  92 |    2 | u16    | entry header offset                                    |
-|  94 |    2 | u16    | entry header size                                      |
-|  96 |    4 | u32    | entry count                                            |
+| Pos | Size | Format | Description                                       |
+| ---:| ----:| ------ | ------------------------------------------------- |
+|   0 |    1 | u8     | ECDSA signature length                            |
+|   1 |   83 |        | ECDSA signature of entry headers, padded with `0` |
+|  84 |    8 | u64    | xxHash checksum                                   |
+|  92 |    2 | u16    | entry header offset                               |
+|  94 |    2 | u16    | entry header size                                 |
+|  96 |    4 | u32    | entry count                                       |
 
 This header provides the number and location of entries in the WAD archive.
 [Entry headers](#entry-headers) start at the *entry header offset* and are
@@ -82,7 +82,7 @@ WAD versions 2 and 3 include all fields.
 |  12 |    4 | u32    | compressed size                        |
 |  16 |    4 | u32    | uncompressed size                      |
 |  20 |    1 | u8     | data type                              |
-|  21 |    1 | bool   | [is duplicated](#entry-duplication)  |
+|  21 |    1 | bool   | set for [duplicate entries](#entry-duplication) |
 |  22 |    2 | u16    | padding                                |
 |  24 |    8 | u64    | first 8 bytes of sha256 hash of data   |
 
@@ -101,7 +101,7 @@ Paths of files in WAD archives are hashed using 64-bit
 Since paths are not stored in the archive in clear, they have to be guessed.
 
 Hashed paths are all in lowercase. They usually use letters, digits and
-characters from `._-`. Rare occurrences also uses spaces and `@`.
+characters from `._-/`. Rare occurrences also uses spaces and `@`.
 
 
 ### Paths from LCU's WADs
@@ -131,16 +131,17 @@ Paths can be restored from BIN files in the archive. This technique will give
 at least 70% of the unknown hashes.
 
 
-## Entry Duplication
+## Entry duplication
 
 If an entry is duplicated, it's offset points to data of an another entry which is not duplicated.
-
 This is a technique to lower file sizes.
 
-## File Redirection
 
-If you jump to the offset of the entry, there is a `uint` specifying the length of the file redirection that follows it.
+## File redirection
 
-The file redirection is a string path.
+For file redirection entries, the data offset points to an `u32` specifying the
+length of the file redirection that follows it.
 
-It tells the game to load the File Redirection file path instead of the one the xxHash specifies.
+The file redirection is a string path. It tells the game to load the file
+redirection file path instead of the one the xxHash specifies.
+
