@@ -99,7 +99,7 @@ The following *data types* are known:
 Paths of files in WAD archives are hashed using 64-bit
 [xxHash](http://cyan4973.github.io/xxHash/) with seed 0.
 Since paths are not stored in the archive in clear, they have to be guessed.
-Paths can also be restored from BIN files in the archive. This is a very good technique and will give you atleast 70% of the unknown hashes.
+Paths can also be restored from BIN files in the archive. This is a very good technique and will give you at least 70% of the unknown hashes.
 
 Hashed paths are all in lowercase. They usually use letters, digits and
 characters from `._-`. Rare occurrences also uses spaces and `@`.
