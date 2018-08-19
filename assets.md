@@ -43,8 +43,7 @@ the actual path, always check the champion's JSON file from
 
 **Note:** most assets from `rcp-be-lol-game-data` can be found in both LCU files and game client files.
 
- - [Basic data](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/),
-   also includes paths to champion-
+ - [Basic data](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/), also includes paths to champion assets
  - [Square icon (base skin)](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/)
  - [Square icons (all skins)](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/), as seen on shop and hextech-crafting
  - [Skin backgrounds (centered)](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/), as seen on profile page
