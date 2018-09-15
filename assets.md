@@ -52,7 +52,7 @@ the actual path, always check the champion's JSON file from
  - [Ultimate skin backgrounds](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-backdrops/), as displayed on profile page
  - [Animated ultimate skin backgrounds](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splash-videos/), full animation, centered
  - [Chroma appearances](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/), as seen on champion select
- - Loading screen backgrounds: `plugins/rcp-be-lol-game-data/global/default/assets/characters/{name}/skins/` or `game/assets/characters/{name}/skins/`
+ - Loading screen champion backgrounds: `plugins/rcp-be-lol-game-data/global/default/assets/characters/{name}/skins/` or `game/assets/characters/{name}/skins/`
    ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akali/skins/)),
    also include limited edition borders ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/riven/skins/skin16/rivenloadscreen_16_le.jpg))
  - Spell icons (all forms): `game/assets/characters/{name}/hud/icons2d` ([example](https://raw.communitydragon.org/latest/game/assets/characters/khazix/hud/icons2d/))
@@ -70,10 +70,12 @@ the actual path, always check the champion's JSON file from
    [and](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loot/)
    [there](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/hextech-images/)
  - [Clash banner flags](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summonerbanners/flags/)
+ - [Odyssey augments](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/odysseyaugments/)
  - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-uikit/global/default/images/) (look for `theme-*-border.png` files)
  - [League tier images](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-league-tier-names/unknown/)
  - [Tier promotion animations](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/videos/)
  - [Mission icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/global/default/events/images/missions/) (note: some are still [unknown](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/unknown/))
+ - [Loading screen game mode backgrounds](https://raw.communitydragon.org/latest/game/data/loadingscreen/)
  - [Loading screen tier borders](https://raw.communitydragon.org/latest/game/data/loadingscreen/season_5_borders.png)
  - [Minimap icons](https://raw.communitydragon.org/latest/game/data/menu/minimapicons/): towers, Nashor, wards, Kindred passive, ...
  - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/latest/game/data/menu_sc4/announcements/), [non-champion portraits](http://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/)
