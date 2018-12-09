@@ -60,7 +60,7 @@ the actual path, always check the champion's JSON file from
 ## Other assets
 
  - [Summoner icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/)
- - [Rune icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/), [variants (including black and white)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-perks/global/default/images/)
+ - [Rune icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/), [variants (including black and white)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-perks/global/default/images/), [stats icons](https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/)
  - [Ward skins](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/wardskinimages/)
  - [Emotes](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/), also [here](https://raw.communitydragon.org/latest/game/assets/loadouts/summoneremotes/)
  - Game modes: [icons and lobby](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/), [loading screen backgrounds](https://raw.communitydragon.org/latest/game/data/loadingscreen/)
@@ -71,9 +71,11 @@ the actual path, always check the champion's JSON file from
    [there](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/hextech-images/)
  - [Clash banner flags](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summonerbanners/flags/)
  - [Odyssey augments](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/odysseyaugments/)
+ - [Nexus Blitz event icons](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
  - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-uikit/global/default/images/) (look for `theme-*-border.png` files)
- - [League tier images](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-crests/)
- - [Tier promotion animations](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/videos/)
+ - [League tier crests](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/lottie/images/) (various parts for each tier)
+ - [League tier icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-mini-regalia/)
+ - [Tier promotion animations](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/lottie/videos/)
  - [Mission icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/global/default/events/images/missions/) (note: some are still [unknown](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/unknown/))
  - [Loading screen game mode backgrounds](https://raw.communitydragon.org/latest/game/data/loadingscreen/)
  - [Loading screen tier borders](https://raw.communitydragon.org/latest/game/data/loadingscreen/season_5_borders.png)
@@ -82,4 +84,10 @@ the actual path, always check the champion's JSON file from
  - [Buff/debuf icons](http://raw.communitydragon.org/latest/game/data/spells/icons2d/)
  - [In-game cursors](http://raw.communitydragon.org/latest/game/data/images/ui/cursors/)
  - [Login screen (background, animation, music)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-splash/global/default/splash-assets/), check older patches for older themes
+
+## Obsolete assets
+
+ - [Old league tier images](https://raw.communitydragon.org/8.23/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-crests/)
+ https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-mini-regalia/
+ - [Old tier promotion animations](https://raw.communitydragon.org/8.23/plugins/rcp-fe-lol-leagues/global/default/videos/)
 
