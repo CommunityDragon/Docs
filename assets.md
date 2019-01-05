@@ -82,6 +82,7 @@ the actual path, always check the champion's JSON file from
  - [Loading screen tier borders](https://raw.communitydragon.org/latest/game/data/loadingscreen/season_5_borders.png)
  - [Minimap icons](https://raw.communitydragon.org/latest/game/data/menu/minimapicons/): towers, Nashor, wards, Kindred passive, ...
  - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/latest/game/data/menu_sc4/announcements/), [non-champion portraits](http://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/)
+ - [Match history icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/), including [gold](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_gold.png) and [CS](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_minions.png) icons from scoreboard
  - [Buff/debuf icons](http://raw.communitydragon.org/latest/game/data/spells/icons2d/)
  - [In-game cursors](http://raw.communitydragon.org/latest/game/data/images/ui/cursors/)
  - [Login screen (background, animation, music)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-splash/global/default/splash-assets/), check older patches for older themes
