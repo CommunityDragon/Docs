@@ -72,14 +72,14 @@ the actual path, always check the champion's JSON file from
  - Role icons: [PNG](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-clash/global/default/assets/images/position-selector/positions/), [SVG](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/svg/) (multiple colors available for both), [for each league tier](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ranked/positions/)
  - [Clash banner flags](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summonerbanners/flags/)
  - [Odyssey augments](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/odysseyaugments/)
- - [Nexus Blitz event icons](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
+ - [Nexus Blitz event icons](https://raw.communitydragon.org/pbe/game/data/menu/textures/slime_atlas.png) (texture map), also [some here](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
  - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-uikit/global/default/images/) (look for `theme-*-border.png` files)
  - [League tier crests](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/) (various parts for each tier, look into `images/` subdirectory for each tier)
  - [League tier icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-mini-regalia/)
  - [Tier promotion animations](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/lottie/videos/)
  - [Mission icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/global/default/events/images/missions/) (note: some are still [unknown](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/unknown/))
  - [Loading screen game mode backgrounds](https://raw.communitydragon.org/latest/game/data/loadingscreen/)
- - [Loading screen tier borders](https://raw.communitydragon.org/latest/game/data/loadingscreen/season_5_borders.png)
+ - Loading screen tier borders: [season 9](https://raw.communitydragon.org/pbe/game/data/menu/textures/loadingscreen_frames_atlas.png), [seasons 5-8](https://raw.communitydragon.org/latest/game/data/loadingscreen/season_5_borders.png)
  - [Minimap icons](https://raw.communitydragon.org/latest/game/data/menu/minimapicons/): towers, Nashor, wards, Kindred passive, ...
  - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/latest/game/data/menu_sc4/announcements/), [non-champion portraits](http://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/)
  - [Match history icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/), including [gold](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_gold.png) and [CS](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_minions.png) icons from scoreboard
