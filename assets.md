@@ -87,6 +87,14 @@ the actual path, always check the champion's JSON file from
  - [In-game cursors](http://raw.communitydragon.org/latest/game/data/images/ui/cursors/)
  - [Login screen (background, animation, music)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-splash/global/default/splash-assets/), check older patches for older themes
 
+## Teamfight Tactics (TFT)
+
+ - [Trait icons](http://raw.communitydragon.org/latest/game/assets/ux/traiticons/)
+ - [Champion images](http://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/) (as displayed in in-game shop)
+ - [Companions](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/companions/) (as displayed in lobby)
+ - [Map skins](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/tftmapskins/) (as displayed in lobby)
+ - UI assets: [one](http://raw.communitydragon.org/latest/game/data/menu/textures/tft_hud_texture_atlas.png), [two](http://raw.communitydragon.org/latest/game/data/menu/textures/tft_traits_texture_atlas.png), [three](http://raw.communitydragon.org/latest/game/data/menu/textures/tfthealthbaratlas.png)
+
 ## Obsolete assets
 
  - [Old league tier images](https://raw.communitydragon.org/8.23/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-crests/)
