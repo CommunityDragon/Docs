@@ -10,7 +10,7 @@ The BIN file starts with the following header:
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
 |   0 |    4 | `PROP` | magic code                             |
-|   4 |    1 | u8     | version                                |
+|   4 |    4 | u32    | version                                |
 
 Parsing of following data depends on the version.
 
@@ -36,10 +36,9 @@ Entry header:
 
 | Pos | Size  | Format | Description                            |
 | ---:| -----:| ------ | -------------------------------------- |
-|   0 |     4 | u32    | length size (4)                        |
-|   4 |     4 | u32    | entry length                           |
-|   8 |     4 | u32    | entry hash                             |
-|  12 |     4 | u16    | field count                            |
+|   0 |     4 | u32    | entry length                           |
+|   4 |     4 | u32    | entry hash                             |
+|   8 |     4 | u16    | field count                            |
 
 The header is followed by field data as defined [here](#field-format).
 
@@ -53,7 +52,7 @@ The following types are defined:
 
 | Value | Format      | Size  | Nested | Description                        |
 | -----:| ----------- | -----:|:------:| ---------------------------------- |
-|     0 | vec3(u16)   | 6     |        |                                    |
+|     0 | empty       | 6     |        |                                    |
 |     1 | bool        | 1     |        |                                    |
 |     2 | s8          | 1     |        |                                    |
 |     3 | u8          | 1     |        |                                    |
@@ -75,13 +74,13 @@ The following types are defined:
 |    19 | struct      | > 10  | ✓      | [structure with named fields](#structs-and-embeddeds) |
 |    20 | embedded    | > 10  | ✓      | [structure with named fields](#structs-and-embeddeds) |
 |    21 | link        | 4     |        |                                    |
-|    22 | array       | > 2   | ✓      | array of values of the same type   |
+|    22 | option      | 2+*n* | ✓      | an optional value                  |
 |    23 | map         | > 10  | ✓      | key/value pairs                    |
-|    24 | padding     | 1     |        | 1-byte padding                     |
+|    24 | flag        | 1     |        | boolean used as a flag              |
 
 **Note:** Value size is either fixed (e.g. numeric types) or provided in the
-header (e.g. structs). The only exceptions are arrays of strings whose size
-cannot be inferred from the header.
+header (e.g. structs). The only exceptions are nested strings whose size cannot
+be inferred from the header.
 
 
 ## Structs and embeddeds
@@ -90,9 +89,8 @@ Structs and embeddeds store their values in fields.
 Each field of is associated to a type and a hash (based on its human-readable
 name). Fields are optional.
 
-**Note:** Structs and embeddeds work the same. In general, structs are favored.
-Embeddeds seem to be used to wrap types that would not be (e.g. to put a
-container in another container).
+**Note:** Structs and embeddeds work the same. The difference is internal:
+structs are stored as fields and embeddeds are pointers to static data.
 
 Data starts with the following header:
 
@@ -116,10 +114,10 @@ Field header format is describe below:
 
 ## Other nested types
 
-Containers, arrays and maps are nested types for which all elements are
+Containers, options and maps are nested types for which all elements are
 sequenced and have the same type (provided in the header).
 
-### Containers
+### Container
 
 | Pos | Size  | Format | Description                            |
 | ---:| -----:| ------ | -------------------------------------- |
@@ -127,12 +125,12 @@ sequenced and have the same type (provided in the header).
 |   1 |     4 | u32    | data size (remaining bytes)            |
 |   5 |     4 | u32    | value count                            |
 
-### Array
+### Option
 
 | Pos | Size  | Format | Description                            |
 | ---:| -----:| ------ | -------------------------------------- |
 |   0 |     1 | u8     | value type                             |
-|   1 |     1 | u8     | value count                            |
+|   1 |     1 | u8     | 1 if option has a value, 0 otherwise   |
 
 ### Map
 
