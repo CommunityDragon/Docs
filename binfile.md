@@ -149,3 +149,16 @@ BIN files use 32-bit hashes to identify fields and reference some data instances
 An [FNV-1a hash](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function#FNV-1a_hash)
 is applied to the lowercased string value.
 
+
+## Patch files
+
+Patch files are used to override specific BIN entries.
+Their format is identical to BIN files, except for an additional header, before the usual `PROP` magic code.
+
+| Pos | Size | Format | Description                            |
+| ---:| ----:| ------ | -------------------------------------- |
+|   0 |    4 | `PTCH` | magic code                             |
+|   4 |    4 | u32    | *unknown* (always 1)                   |
+|   8 |    4 | u32    | *unknown* (always 0)                   |
+|  12 |    4 | `PROP` | BIN file magic code followed by usual data |
+
