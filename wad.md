@@ -26,6 +26,7 @@ Following the WAD header is the directory entry.
 | ---:| ----:| ------ | -------------------------------------- |
 |   0 |    2 | u16    | entry header offset                    |
 |   2 |    2 | u16    | entry header size                      |
+|   4 |    4 | u32    | entry count                            |
 
 This header provides the number and location of entries in the WAD archive.
 [Entry headers](#entry-headers) start at the *entry header offset* and are
@@ -72,7 +73,7 @@ Entry header format is compatible with all WAD versions: new fields are added
 to the end of the structure. Knowing the size of the entry header structure
 allows to which fields are actually present.
 
-WAD version 1 ends at the *compression type* field.
+WAD version 1 ends at the *data type* field, followed by 3 padding bytes (for alignement).
 WAD versions 2 and 3 include all fields.
 
 | Pos | Size | Format | Description                            |
