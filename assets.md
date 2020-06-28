@@ -86,6 +86,7 @@ the actual path, always check the champion's JSON file from
  - [Buff/debuf icons](http://raw.communitydragon.org/latest/game/data/spells/icons2d/)
  - [In-game cursors](http://raw.communitydragon.org/latest/game/data/images/ui/cursors/)
  - [Login screen (background, animation, music)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-splash/global/default/splash-assets/), check older patches for older themes
+ - [Mastery icons](https://raw.communitydragon.org/latest/game/assets/ux/mastery/)
 
 ## Teamfight Tactics (TFT)
 
