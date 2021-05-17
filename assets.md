@@ -1,6 +1,6 @@
 # Asset paths
 
-A lot of assets are available in LCU and game client files. This describes how
+A lot of assets are available in client and game files. This describes how
 they are organized and where to find frequently requested files.
 
 **Note:** Files are sometimes reorganized by Riot. This page applies to the latest version.
@@ -12,9 +12,9 @@ subdirectory.
 Files with unknown path are put in `unknown/` subdirectories.
 
 
-## LCU paths
+## Client paths
 
-Most paths from LCU use the following format: `plugins/<plugin>/<region>/<lang>/...`
+Most paths from client use the following format: `plugins/<plugin>/<region>/<lang>/...`
 Where:
  - `<plugin>` is the client plugin name
  - `<region>` is a region name (e.g. `euw`), or `global`
@@ -34,6 +34,15 @@ some visuals (e.g. Grave's cigar).
 When retrieving an asset, the client starts by looking for a match with its
 specific region and/or language, then falls back to `global/default`.
 
+### Mapping paths from JSON files.
+
+The `plugins/rcp-be-lol-game-data/global/default/v1/` directory contains a lot of JSON files, for a lot of game objects.
+In those, asset paths can be mapped to URLs: `/lol-game-data/assets/<path>` is mapped to `plugins/rcp-be-lol-game-data/global/default/<lowercased-path>`.
+
+For instance:
+ - `/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHome.png` maps to [plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/teleporthome.png](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/teleporthome.png)
+ - `/lol-game-data/assets/v1/champion-icons/-1.png` maps to [plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png)
+
 
 ## Champion assets
 
@@ -49,8 +58,7 @@ the actual path, always check the champion's JSON file from
  - Round portraits (all skins): `game/assets/characters/{name}/hud/` ([example](https://raw.communitydragon.org/latest/game/assets/characters/lux/hud/))
  - [Skin backgrounds (centered)](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/), as seen on profile page
  - [Skin backgrounds (uncentered)](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/), as seen on collection tab
- - [Ultimate skin backgrounds](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-backdrops/), as displayed on profile page
- - [Animated ultimate skin backgrounds](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splash-videos/), full animation, centered
+ - [Ultimate skin backgrounds](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-backdrops/), as displayed on profile page, also animated
  - [Chroma appearances](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/), as seen on champion select
  - Loading screen champion backgrounds: `plugins/rcp-be-lol-game-data/global/default/assets/characters/{name}/skins/` or `game/assets/characters/{name}/skins/`
    ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akali/skins/)),
@@ -60,32 +68,28 @@ the actual path, always check the champion's JSON file from
 ## Other assets
 
  - [Summoner icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/)
- - [Rune icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/), [variants (including black and white)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-perks/global/default/images/), [stats icons](https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/)
+ - [Rune icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/), [stats icons](https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/statmods/)
  - [Ward skins](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/wardskinimages/)
  - [Emotes](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/), also [here](https://raw.communitydragon.org/latest/game/assets/loadouts/summoneremotes/)
  - Game modes: [icons and lobby](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/), [loading screen backgrounds](https://raw.communitydragon.org/latest/game/assets/loadingscreen/)
- - [Item icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/items/icons2d/)
+ - [Item icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/)
  - Hextech crafting and loot:
    [here](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-loot/global/default/assets/loot_item_icons/)
    [and](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loot/)
    [there](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/hextech-images/)
- - Role icons: [PNG](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-clash/global/default/assets/images/position-selector/positions/), [SVG](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/svg/) (multiple colors available for both), [for each league tier](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ranked/positions/)
+ - Role icons: [PNG](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-clash/global/default/assets/images/position-selector/positions/), [SVG](https://raw.communitydragon.org/pbe/plugins/rcp-fe-lol-static-assets/global/default/svg/) (multiple colors available for both), [for each league tier](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ranked/positions/)
  - [Clash banner flags](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summonerbanners/flags/)
- - [Odyssey augments](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/odysseyaugments/)
- - [Nexus Blitz event icons](https://raw.communitydragon.org/pbe/game/data/menu/textures/slime_atlas.png) (texture map), also [some here](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
- - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-uikit/global/default/images/) (look for `theme-*-border.png` files)
+ - [Nexus Blitz event icons](http://raw.communitydragon.org/pbe/game/assets/ux/gamemodes/slime_atlas.png) (texture map), also [some here](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
+ - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/prestigeborders/) (look for `theme-*-border.png` files), also [here](https://raw.communitydragon.org/pbe/plugins/rcp-fe-lol-static-assets/global/default/images/uikit/themed-level-ring/)
  - [League tier crests](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/) (various parts for each tier, look into `images/` subdirectory for each tier)
  - [League tier icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-mini-regalia/)
- - [Tier promotion animations](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-leagues/global/default/lottie/videos/)
+ - [Tier promotion animations](https://raw.communitydragon.org/pbe/plugins/rcp-fe-lol-static-assets/global/default/videos/)
  - [Mission icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/global/default/events/images/missions/) (note: some are still [unknown](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/unknown/))
- - [Loading screen game mode backgrounds](https://raw.communitydragon.org/latest/game/data/loadingscreen/)
- - Loading screen tier borders: [season 9](https://raw.communitydragon.org/pbe/game/data/menu/textures/loadingscreen_frames_atlas.png), [seasons 5-8](https://raw.communitydragon.org/latest/game/data/loadingscreen/season_5_borders.png)
- - [Minimap icons](https://raw.communitydragon.org/latest/game/data/menu/minimapicons/): towers, Nashor, wards, Kindred passive, ...
- - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/latest/game/data/menu_sc4/announcements/), [non-champion portraits](http://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/)
+ - [Loading screen tier borders](https://raw.communitydragon.org/pbe/game/assets/ux/loadingscreen/loadingscreen_frames_atlas.png)
+ - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/pbe/game/data/menu/announcements/), [non-champion portraits](http://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/)
  - [Match history icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/), including [gold](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_gold.png) and [CS](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_minions.png) icons from scoreboard
  - [Buff/debuf icons](http://raw.communitydragon.org/latest/game/data/spells/icons2d/)
- - [In-game cursors](http://raw.communitydragon.org/latest/game/data/images/ui/cursors/)
- - [Login screen (background, animation, music)](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-splash/global/default/splash-assets/), check older patches for older themes
+ - [In-game cursors](http://raw.communitydragon.org/pbe/game/assets/ux/cursors/) (also [Qiyana's ones](http://raw.communitydragon.org/pbe/game/assets/characters/qiyana/cursors/))
  - [Mastery icons](https://raw.communitydragon.org/latest/game/assets/ux/mastery/)
 
 ## Teamfight Tactics (TFT)
@@ -95,7 +99,7 @@ the actual path, always check the champion's JSON file from
  - [Champion images](http://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/) (as displayed in in-game shop)
  - [Companions](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/companions/) (as displayed in lobby)
  - [Map skins](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/tftmapskins/) (as displayed in lobby)
- - UI assets: [one](http://raw.communitydragon.org/latest/game/data/menu/textures/tft_hud_texture_atlas.png), [two](http://raw.communitydragon.org/latest/game/data/menu/textures/tft_traits_texture_atlas.png), [three](http://raw.communitydragon.org/latest/game/data/menu/textures/tfthealthbaratlas.png)
+ - [UI assets](http://raw.communitydragon.org/pbe/game/assets/ux/tft/) (look in subdirectories for more)
 
 ## Obsolete assets
 
