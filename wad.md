@@ -42,7 +42,7 @@ Following the WAD header is the directory entry.
 | ---:| ----:| ------ | ------------------------------------------------- |
 |   0 |    1 | u8     | ECDSA signature length                            |
 |   1 |   83 |        | ECDSA signature of entry headers, padded with `0` |
-|  84 |    8 |        | xxHash checksum                                   |
+|  84 |    8 |        | XXH64 checksum                                    |
 |  92 |    2 | u16    | entry header offset                               |
 |  94 |    2 | u16    | entry header size                                 |
 |  96 |    4 | u32    | entry count                                       |
@@ -60,7 +60,7 @@ Following the WAD header is the directory entry.
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
 |   0 |  256 |        | ECDSA signature                        |
-| 256 |    8 |        | xxHash checksum                        |
+| 256 |    8 |        | XXH64 checksum                         |
 | 264 |    4 | u32    | entry count                            |
 
 This header provides the number of entries in the WAD archive.
@@ -94,7 +94,7 @@ The following *data types* are known:
  - `1` -- gzip
  - `2` -- [file redirection](#file-redirection)
  - `3` -- [Zstandard](http://facebook.github.io/zstd/)
- - `4` -- [Zstandard with subhcunks](#entry-subchunks)
+ - `4` -- [Zstandard with subchunks](#entry-subchunks)
 
 ## Entry subchunks
 
@@ -103,7 +103,7 @@ Subchunked entries consist of multiple ZStandard compressed frames.
 Subchunk headers are packed as an array inside dedicated entry.
 Name of dedicated entry is derived by swaping extension 
 of ``.wad.client`` to ``wad.SubchunkTOC``.
-This allows the client to skip decompressing unecessary parts of file(example: unused mipmaps).
+This allows the client to skip decompressing unecessary parts of file (example: unused mipmaps).
 
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
@@ -115,7 +115,7 @@ This allows the client to skip decompressing unecessary parts of file(example: u
 ## Path hashes
 
 Paths of files in WAD archives are hashed using 64-bit
-[xxHash](http://cyan4973.github.io/xxHash/) with seed 0.
+[XXH64](http://cyan4973.github.io/xxHash/) with seed 0.
 Since paths are not stored in the archive in clear, they have to be guessed.
 
 Hashed paths are all in lowercase. They usually use letters, digits and
@@ -130,7 +130,7 @@ List of reversed hashes are available on CDTB:
 ## Entry duplication
 
 If an entry is duplicated, it's offset points to data of first entry which is not duplicated.
-Pointed entry does not have duplicated flag set, only subsequent entries do have.
+Pointed entry does not have duplicated flag set, only subsequent entries have it.
 This is a technique to lower file sizes.
 
 ## Entry checksum
