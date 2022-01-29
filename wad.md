@@ -42,7 +42,7 @@ Following the WAD header is the directory entry.
 | ---:| ----:| ------ | ------------------------------------------------- |
 |   0 |    1 | u8     | ECDSA signature length                            |
 |   1 |   83 |        | ECDSA signature of entry headers, padded with `0` |
-|  84 |    8 | u64    | xxHash checksum                                   |
+|  84 |    8 |        | xxHash checksum                                   |
 |  92 |    2 | u16    | entry header offset                               |
 |  94 |    2 | u16    | entry header size                                 |
 |  96 |    4 | u32    | entry count                                       |
@@ -59,7 +59,8 @@ Following the WAD header is the directory entry.
 
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
-|   0 |  264 |        | ECDSA signature                        |
+|   0 |  256 |        | ECDSA signature                        |
+| 256 |    8 |        | xxHash checksum                        |
 | 264 |    4 | u32    | entry count                            |
 
 This header provides the number of entries in the WAD archive.
@@ -69,23 +70,23 @@ contiguous.
 
 ## Entry headers
 
-Entry header format is compatible with all WAD versions: new fields are added
-to the end of the structure. Knowing the size of the entry header structure
-allows to which fields are actually present.
+Entry header format is somewhat compatible with all WAD versions: new fields are added
+to the end of the structure.
 
 WAD version 1 ends at the *data type* field, followed by 3 padding bytes (for alignement).
 WAD versions 2 and 3 include all fields.
 
-| Pos | Size | Format | Description                            |
-| ---:| ----:| ------ | -------------------------------------- |
-|   0 |    8 | u64    | [path hash](#path-hashes)              |
-|   8 |    4 | u32    | data offset in the WAD archive         |
-|  12 |    4 | u32    | compressed size                        |
-|  16 |    4 | u32    | uncompressed size                      |
-|  20 |    1 | u8     | data type                              |
-|  21 |    1 | bool   | set for [duplicate entries](#entry-duplication) |
-|  22 |    2 | u16    | padding                                |
-|  24 |    8 | u64    | first 8 bytes of sha256 hash of data   |
+| Pos   | Size | Format | Description                            |
+| ---:  | ----:| ------ | -------------------------------------- |
+|   0   |    8 | u64    | [path hash](#path-hashes)              |
+|   8   |    4 | u32    | data offset in the WAD archive         |
+|  12   |    4 | u32    | compressed size                        |
+|  16   |    4 | u32    | uncompressed size                      |
+|  20:0 |  0:4 | u4     | data type                              |
+|  20:4 |  0:4 | u4     | count of [subbchunks](#entry-subchunks) |
+|  21   |    1 | bool   | set for [duplicate entries](#entry-duplication) |
+|  22   |    2 | u16    | index of first [subbchunk](#entry-subchunks) |
+|  24   |    8 |        | [entry checksum](#entry-checksum)      |
 
 The following *data types* are known:
 
@@ -93,6 +94,21 @@ The following *data types* are known:
  - `1` -- gzip
  - `2` -- [file redirection](#file-redirection)
  - `3` -- [Zstandard](http://facebook.github.io/zstd/)
+ - `4` -- [Zstandard with subhcunks](#entry-subchunks)
+
+## Entry subchunks
+
+Introduced in 3.3.
+Subchunked entries consist of multiple ZStandard compressed frames.
+Subchunk headers are packed as an array inside dedicated entry.
+Name of dedicated entry is derived by swaping extension 
+of ``.wad.client`` to ``wad.SubchunkTOC``.
+
+| Pos | Size | Format | Description                            |
+| ---:| ----:| ------ | -------------------------------------- |
+|   0 |    4 |    u32 | compressed size                        |
+|   4 |    4 |    u32 | uncompressed size                      |
+|   8 |    8 |        | [subbchunk checksum](#entry-checksum)  |
 
 
 ## Path hashes
@@ -112,9 +128,15 @@ List of reversed hashes are available on CDTB:
 
 ## Entry duplication
 
-If an entry is duplicated, it's offset points to data of an another entry which is not duplicated.
+If an entry is duplicated, it's offset points to data of first entry which is not duplicated.
+Pointed entry does not have duplicated flag set, only subsequent entries do have.
 This is a technique to lower file sizes.
 
+## Entry checksum
+
+Not present for entry headers before wad version 3.
+For version 3.0 this is first 8 bytes of sha256 hash.
+Starting with version 3.1 this is xxh3_64bits hash.
 
 ## File redirection
 
