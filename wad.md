@@ -103,6 +103,7 @@ Subchunked entries consist of multiple ZStandard compressed frames.
 Subchunk headers are packed as an array inside dedicated entry.
 Name of dedicated entry is derived by swaping extension 
 of ``.wad.client`` to ``wad.SubchunkTOC``.
+This allows the client to skip decompressing unecessary parts of file(example: unused mipmaps).
 
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
