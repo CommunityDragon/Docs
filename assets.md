@@ -65,6 +65,9 @@ the actual path, always check the champion's JSON file from
    also include limited edition borders ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/riven/skins/skin16/rivenloadscreen_16_le.jpg))
  - Spell icons (all forms): `game/assets/characters/{name}/hud/icons2d` ([example](https://raw.communitydragon.org/latest/game/assets/characters/khazix/hud/icons2d/))
 
+## Event assets
+Some event assets aren't exported on raw.communitydragon.org. These event assets (like images and videos) are sorted by year and event on [universe.communitydragon.org](https://universe.communitydragon.org)
+
 ## Other assets
 
  - [Summoner icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/)
@@ -106,4 +109,3 @@ the actual path, always check the champion's JSON file from
 
  - [Old league tier images](https://raw.communitydragon.org/8.23/plugins/rcp-fe-lol-league-tier-names/global/default/assets/images/ranked-crests/)
  - [Old tier promotion animations](https://raw.communitydragon.org/8.23/plugins/rcp-fe-lol-leagues/global/default/videos/)
-
