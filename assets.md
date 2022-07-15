@@ -95,6 +95,7 @@ Some event assets aren't exported on raw.communitydragon.org. These event assets
  - [Buff/debuf icons](http://raw.communitydragon.org/latest/game/data/spells/icons2d/)
  - [In-game cursors](http://raw.communitydragon.org/pbe/game/assets/ux/cursors/) (also [Qiyana's ones](http://raw.communitydragon.org/pbe/game/assets/characters/qiyana/cursors/))
  - [Mastery icons](https://raw.communitydragon.org/latest/game/assets/ux/mastery/)
+ - [Challenge assets](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/) like crystal and category icons
 
 ## Teamfight Tactics (TFT)
 
