@@ -34,10 +34,15 @@ some visuals (e.g. Grave's cigar).
 When retrieving an asset, the client starts by looking for a match with its
 specific region and/or language, then falls back to `global/default`.
 
-### Mapping paths from JSON files.
 
-The `plugins/rcp-be-lol-game-data/global/default/v1/` directory contains a lot of JSON files, for a lot of game objects.
-In those, asset paths can be mapped to URLs: `/lol-game-data/assets/<path>` is mapped to `plugins/rcp-be-lol-game-data/global/default/<lowercased-path>`.
+## JSON data files
+
+Various data are available [as JSON files](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/).
+They cover a large set of game objects (champions, skins, missions, TFT, ...) and are a good start point.
+
+### Mapping paths from JSON files
+
+In those JSON files, asset paths can be mapped to URLs: `/lol-game-data/assets/<path>` is mapped to `plugins/rcp-be-lol-game-data/global/default/<lowercased-path>`.
 
 For instance:
  - `/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHome.png` maps to [plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/teleporthome.png](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/teleporthome.png)
