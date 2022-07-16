@@ -70,9 +70,6 @@ the actual path, always check the champion's JSON file from
    also include limited edition borders ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/riven/skins/skin16/rivenloadscreen_16_le.jpg))
  - Spell icons (all forms): `game/assets/characters/{name}/hud/icons2d` ([example](https://raw.communitydragon.org/latest/game/assets/characters/khazix/hud/icons2d/))
 
-## Event assets
-Some event assets aren't exported on raw.communitydragon.org. These event assets (like images and videos) are sorted by year and event on [universe.communitydragon.org](https://universe.communitydragon.org)
-
 ## Other assets
 
  - [Summoner icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/)
@@ -110,6 +107,11 @@ Some event assets aren't exported on raw.communitydragon.org. These event assets
  - [Companions](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/companions/) (as displayed in lobby)
  - [Map skins](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/tftmapskins/) (as displayed in lobby)
  - [UI assets](http://raw.communitydragon.org/pbe/game/assets/ux/tft/) (look in subdirectories for more)
+
+## Event assets
+
+Some event assets are not available on raw.communitydragon.org, notably lore-related images and videos.
+They can be found sorted by year and event on [universe.communitydragon.org](https://universe.communitydragon.org).
 
 ## Obsolete assets
 
