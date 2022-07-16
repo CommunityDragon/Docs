@@ -69,6 +69,8 @@ the actual path, always check the champion's JSON file from
    ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akali/skins/)),
    also include limited edition borders ([example](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/riven/skins/skin16/rivenloadscreen_16_le.jpg))
  - Spell icons (all forms): `game/assets/characters/{name}/hud/icons2d` ([example](https://raw.communitydragon.org/latest/game/assets/characters/khazix/hud/icons2d/))
+ - Ability preview videos: append `abilityVideoPath` from [champion basic data](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/) to [https://d28xe8vt774jo5.cloudfront.net/](https://d28xe8vt774jo5.cloudfront.net/) ([example](https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0777/ability_0777_Q1.webm))
+ - [Pick](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-choose-vo/)/[ban](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-ban-vo/) voice lines
 
 ## Other assets
 
@@ -112,6 +114,23 @@ the actual path, always check the champion's JSON file from
 
 Some event assets are not available on raw.communitydragon.org, notably lore-related images and videos.
 They can be found sorted by year and event on [universe.communitydragon.org](https://universe.communitydragon.org).
+
+## Where can I find this asset or data?
+
+ - All images used in game should be available somewhere under the `game/` subdirectory.
+ - Images from atlases ([example](https://raw.communitydragon.org/latest/game/assets/ux/lol/clarity_hudatlas.png)) are not provided as individual images. Exact coordinates can be found in bin files.
+ - **Detailed champion data** are available in bin files, usually from [here](https://raw.communitydragon.org/latest/game/data/characters/) ([example](https://raw.communitydragon.org/latest/game/data/characters/janna/janna.bin.json)) but there is no unified format and nor an easy way to interpret it.
+ - **Voice lines** – Audio heard in-game, including champion voice lines, is not available.
+ - **News and events**
+    - News and event tabs are loaded as web pages from an external servers and their assets are usually not available on *raw*.
+    - Some assets of global game events can be found on [universe.communitydragon.org](https://universe.communitydragon.org).
+    - Some events are region-specific
+ - **Store** – Since the store uses a separate server, the following assets and data are *not* available
+    - Prices (RP, IP, other currencies)
+    - Information on current or forecoming sales
+    - Images of some special purchase items (e.g. bundles)
+    - Chroma names
+ - [The Wiki](https://leagueoflegends.fandom.com/wiki/) has a lot of ressources, including some high-res versions.
 
 ## Obsolete assets
 
