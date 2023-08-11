@@ -11,6 +11,10 @@ subdirectory.
 
 Files with unknown path are put in `unknown/` subdirectories.
 
+**Tip:** to download whole directories, you can use one of these tools:
+ - https://github.com/Hi-Ray/cd-dd/
+ - https://github.com/BlossomiShymae/snip-snip
+
 
 ## Client paths
 
