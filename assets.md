@@ -5,7 +5,7 @@ they are organized and where to find frequently requested files.
 
 **Note:** Files are sometimes reorganized by Riot. This page applies to the latest version.
 
-On [raw.communitydragon.org](http://raw.communitydragon.org/latest/), LCU files
+On [raw.communitydragon.org](https://raw.communitydragon.org/latest/), LCU files
 are exported at the root and game client hashes are exported in the `game/`
 subdirectory.
 
@@ -90,29 +90,29 @@ the actual path, always check the champion's JSON file from
    [there](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/hextech-images/)
  - Role icons: [PNG](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-clash/global/default/assets/images/position-selector/positions/), [SVG](https://raw.communitydragon.org/pbe/plugins/rcp-fe-lol-static-assets/global/default/svg/) (multiple colors available for both)
  - [Clash banner flags](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summonerbanners/flags/)
- - [Nexus Blitz event icons](http://raw.communitydragon.org/pbe/game/assets/ux/gamemodes/slime_atlas.png) (texture map), also [some here](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
+ - [Nexus Blitz event icons](https://raw.communitydragon.org/pbe/game/assets/ux/gamemodes/slime_atlas.png) (texture map), also [some here](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
  - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/uikit/themed-borders/) (look for `theme-*-border.png` files), old ones [here](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/uikit/themed-level-ring/)
  - [League ranked crests](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/) (various parts for each tier, look into `images/` subdirectory for each tier)
  - [League ranked icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/)
  - [League ranked mini icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-mini-crests/)
  - [Tier promotion animations](https://raw.communitydragon.org/pbe/plugins/rcp-fe-lol-static-assets/global/default/videos/)
- - [Mission icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/global/default/events/images/missions/) (note: some are still [unknown](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/unknown/))
+ - [Mission icons](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/missions/)
  - [Loading screen tier borders](https://raw.communitydragon.org/pbe/game/assets/ux/loadingscreen/)
- - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/latest/game/assets/ux/announcements/announcementicons.png), [non-champion portraits](http://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/), [dragon portraits](https://raw.communitydragon.org/latest/game/assets/ux/announcements/)
+ - In-game announcements: [champion borders, multi-kill banners](https://raw.communitydragon.org/latest/game/assets/ux/announcements/announcementicons.png), [non-champion portraits](https://raw.communitydragon.org/latest/game/data/images/ui/momentstimelineportraits/), [dragon portraits](https://raw.communitydragon.org/latest/game/assets/ux/announcements/)
  - [Match history icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/), including [gold](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_gold.png) and [CS](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-match-history/global/default/icon_minions.png) icons from scoreboard
- - [Buff/debuf icons](http://raw.communitydragon.org/latest/game/data/spells/icons2d/)
- - [In-game cursors](http://raw.communitydragon.org/pbe/game/assets/ux/cursors/) (also [Qiyana's ones](http://raw.communitydragon.org/pbe/game/assets/characters/qiyana/cursors/))
+ - [Buff/debuf icons](https://raw.communitydragon.org/latest/game/data/spells/icons2d/)
+ - [In-game cursors](https://raw.communitydragon.org/pbe/game/assets/ux/cursors/) (also [Qiyana's ones](http://raw.communitydragon.org/pbe/game/assets/characters/qiyana/cursors/))
  - [Mastery icons](https://raw.communitydragon.org/latest/game/assets/ux/mastery/)
  - [Challenge assets](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/) like crystal and category icons
 
 ## Teamfight Tactics (TFT)
 
- - [Most icons](http://raw.communitydragon.org/pbe/game/assets/ux/fonts/texticons.png) (small versions)
- - [Trait icons](http://raw.communitydragon.org/latest/game/assets/ux/traiticons/)
- - [Champion images](http://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/) (as displayed in in-game shop)
+ - [Most icons](https://raw.communitydragon.org/latest/game/assets/ux/fonts/) (look for `texticons*.png` file)
+ - [Trait icons](https://raw.communitydragon.org/latest/game/assets/ux/traiticons/)
+ - [Champion images](https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/) (as displayed in in-game shop)
  - [Companions](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/companions/) (as displayed in lobby)
  - [Map skins](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/tftmapskins/) (as displayed in lobby)
- - [UI assets](http://raw.communitydragon.org/pbe/game/assets/ux/tft/) (look in subdirectories for more)
+ - [UI assets](https://raw.communitydragon.org/pbe/game/assets/ux/tft/) (look in subdirectories for more)
 
 ## Event assets
 

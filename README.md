@@ -5,13 +5,13 @@ CommunityDragon (also referred to as cdragon) is an open-source organization whi
 If you're only looking for access to assets, CommunityDragon provides two main services for accessing those assets, that being [RAW](https://raw.communitydragon.org) and [CDN](https://cdn.communitydragon.org). 
 
 **raw.communitydragon.org**\
-The RAW service provides all data directly scraped from both the game client and the LCU (League Client Update), up until patch 7.1. Although providing all data available in both clients, the data might be more difficult to access, since Riot's client data is slightly unstructured, and you'll have to fetch some JSON files beforehand in order to get the correct paths to certain assets. You can find commonly used paths in the [assets page](https://www.communitydragon.org/documentation/assets).
+The RAW service provides all data directly scraped from both the game client and the LCU (League Client Update), up until patch 7.1. Although providing all data available in both clients, the data might be more difficult to access, since Riot's client data is slightly unstructured, and you'll have to fetch some JSON files beforehand in order to get the correct paths to certain assets. You can find commonly used paths in the [assets page](https://github.com/CommunityDragon/Docs/blob/master/assets.md).
 
 **cdn.communitydragon.org**\
 The CDN service provides assets in a more structured manner. It proxies the data directly from RAW. Beware that CDN will be deprecated in the future, in order to allow for versioning of the endpoints, improving uptime, and allowing multiple games from Riot (Valorant, Legends of Runeterra, Wild Rift) to be hosted through CDN. CommunityDragon will drop an announcement about the deprecation through both the blog and in discord announcements.
 
 ### Tooling
-Currently, all scraping tools are located on GitHub under the name of [CDTB](https://github.com/communitydragon/cdtb) (short for CommunityDragon ToolBox). This toolbox is primarily focused on scraping and unpacking League of Legends data specifically. The toolbox does however also contain python scripts that allow for the scraping other games made by Riot, as Riot uses the same patcher for all of it's IPs.
+Currently, all scraping tools are located on GitHub under the name of [CDTB](https://github.com/communitydragon/CDTB) (short for CommunityDragon ToolBox). This toolbox is primarily focused on scraping and unpacking League of Legends data specifically. The toolbox does however also contain python scripts that allow for the scraping other games made by Riot, as Riot uses the same patcher for all of it's IPs.
 
 ### Bugs & Suggestions
 If you find any bugs, the community would appreciate reporting these bugs either through Discord or GitHub Issues. Issues found on the provided services should be reported through [Discord](https://discord.gg/rZQwuek) and pinging an online member of management. As for the tooling, issues can both be reported through the Discord community, or through GitHub Issues.

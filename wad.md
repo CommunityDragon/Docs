@@ -93,7 +93,7 @@ The following *data types* are known:
  - `0` -- uncompressed data
  - `1` -- gzip
  - `2` -- [file redirection](#file-redirection)
- - `3` -- [Zstandard](http://facebook.github.io/zstd/)
+ - `3` -- [Zstandard](https://facebook.github.io/zstd/)
  - `4` -- [Zstandard with subchunks](#entry-subchunks)
 
 ## Entry subchunks
@@ -115,16 +115,13 @@ This allows the client to skip decompressing unecessary parts of file (example: 
 ## Path hashes
 
 Paths of files in WAD archives are hashed using 64-bit
-[XXH64](http://cyan4973.github.io/xxHash/) with seed 0.
+[XXH64](https://cyan4973.github.io/xxHash/) with seed 0.
 Since paths are not stored in the archive in clear, they have to be guessed.
 
 Hashed paths are all in lowercase. They usually use letters, digits and
 characters from `._-/`. Rare occurrences also use spaces and `@`.
 
-List of reversed hashes are available on CDTB:
-
- - [LCU hashes](https://raw.githubusercontent.com/CommunityDragon/CDTB/master/cdragontoolbox/hashes.lcu.txt)
- - [game client hashes](https://raw.githubusercontent.com/CommunityDragon/CDTB/master/cdragontoolbox/hashes.game.txt)
+List of reversed hashes are available in [Data repository](https://github.com/CommunityDragon/Data).
 
 
 ## Entry duplication
