@@ -11,9 +11,17 @@ subdirectory.
 
 Files with unknown path are put in `unknown/` subdirectories.
 
-**Tip:** to download whole directories, you can use one of these tools:
+## Tips and tools
+
+To download whole directories, you can use one of these tools:
  - https://github.com/Hi-Ray/cd-dd/
  - https://github.com/BlossomiShymae/snip-snip
+
+Don't forget to use the search bar! It accepts regular expressions and can search either globally (whole patch) or locally (from current directory).
+If it's more convenient you can also use the (huge) [list of all exported files](https://raw.communitydragon.org/latest/cdragon/files.exported.txt).
+
+Directory listing is also available as JSON, to be used from scripts or tools.
+Prefix the URI path with `json/` to fetch it; e.g. [https://raw.communitydragon.org/json/latest/game/](https://raw.communitydragon.org/json/latest/game/).
 
 
 ## Client paths
@@ -51,6 +59,11 @@ In those JSON files, asset paths can be mapped to URLs: `/lol-game-data/assets/<
 For instance:
  - `/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHome.png` maps to [plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/teleporthome.png](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/teleporthome.png)
  - `/lol-game-data/assets/v1/champion-icons/-1.png` maps to [plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png)
+
+## TFT and arena data
+
+JSON files for each language are provided for both [TFT](https://raw.communitydragon.org/latest/cdragon/tft/) and [Arena](https://raw.communitydragon.org/latest/cdragon/arena/).
+Those files are not created directly by Riot but built by CDragon team from various Riot files, as a convenience.
 
 
 ## Champion assets
