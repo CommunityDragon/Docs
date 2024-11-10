@@ -105,7 +105,7 @@ the actual path, always check the champion's JSON file from
  - [Clash banner flags](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summonerbanners/flags/)
  - [Nexus Blitz event icons](https://raw.communitydragon.org/pbe/game/assets/ux/gamemodes/slime_atlas.png) (texture map), also [some here](http://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/gamemodex/img/eventicons/)
  - [Profile and friend-list circles based on summoner level](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/uikit/themed-borders/) (look for `theme-*-border.png` files), old ones [here](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/uikit/themed-level-ring/)
- - [League ranked crests](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/) (various parts for each tier, look into `images/` subdirectory for each tier)
+ - [League ranked crests](https://raw.communitydragon.org/latest/game/assets/loadouts/regalia/crests/ranked/), old ones [here](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/)
  - [League ranked icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/)
  - [League ranked mini icons](https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-mini-crests/)
  - [Tier promotion animations](https://raw.communitydragon.org/pbe/plugins/rcp-fe-lol-static-assets/global/default/videos/)
