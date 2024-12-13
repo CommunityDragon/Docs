@@ -73,7 +73,7 @@ contiguous.
 Entry header format is somewhat compatible with all WAD versions: new fields are added
 to the end of the structure.
 
-WAD version 1 ends at the *data type* field, followed by 3 padding bytes (for alignement).
+WAD version 1 ends at the *data type* field, followed by 3 padding bytes (for alignment).
 WAD versions 2 and 3 include all fields.
 
 | Pos   | Size | Format | Description                            |
@@ -83,10 +83,13 @@ WAD versions 2 and 3 include all fields.
 |  12   |    4 | u32    | compressed size                        |
 |  16   |    4 | u32    | uncompressed size                      |
 |  20:0 |  0:4 | u4     | data type                              |
-|  20:4 |  0:4 | u4     | count of [subbchunks](#entry-subchunks) |
+|  20:4 |  0:4 | u4     | count of [subchunks](#entry-subchunks) |
 |  21   |    1 | bool   | set for [duplicate entries](#entry-duplication) |
-|  22   |    2 | u16    | index of first [subbchunk](#entry-subchunks) |
+|  22   |    2 | u16    | index of first [subchunk](#entry-subchunks) |
 |  24   |    8 |        | [entry checksum](#entry-checksum)      |
+
+For version 3.4 onwards, the `duplicate` field is instead used as high byte for the first subchunk index.
+That means its value is multiplied by 2<sup>16</sup> and added to the `index of first subchunk` field.
 
 The following *data types* are known:
 
@@ -100,16 +103,15 @@ The following *data types* are known:
 
 Introduced in 3.3.
 Subchunked entries consist of multiple ZStandard compressed frames.
-Subchunk headers are packed as an array inside dedicated entry.
-Name of dedicated entry is derived by swaping extension 
-of ``.wad.client`` to ``wad.SubchunkTOC``.
-This allows the client to skip decompressing unecessary parts of file (example: unused mipmaps).
+Subchunk headers are packed as an array inside of a dedicated entry.
+The name of this dedicated entry is derived by swapping the ``.wad.client`` extension with ``.wad.SubChunkTOC``.
+This allows the client to skip decompressing unecessary parts of files (example: unused mipmaps).
 
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
 |   0 |    4 |    u32 | compressed size                        |
 |   4 |    4 |    u32 | uncompressed size                      |
-|   8 |    8 |        | [subbchunk checksum](#entry-checksum)  |
+|   8 |    8 |        | [subchunk checksum](#entry-checksum)  |
 
 
 ## Path hashes
@@ -143,4 +145,3 @@ length of the file redirection that follows it.
 
 The file redirection is a string path. It tells the game to load the file
 redirection file path instead of the one the xxHash specifies.
-
