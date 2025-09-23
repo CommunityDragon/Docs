@@ -42,7 +42,7 @@ Following the WAD header is the directory entry.
 | ---:| ----:| ------ | ------------------------------------------------- |
 |   0 |    1 | u8     | ECDSA signature length                            |
 |   1 |   83 |        | ECDSA signature of entry headers, padded with `0` |
-|  84 |    8 |        | XXH64 checksum                                    |
+|  84 |    8 |        | [header checksum](#header-checksum)               |
 |  92 |    2 | u16    | entry header offset                               |
 |  94 |    2 | u16    | entry header size                                 |
 |  96 |    4 | u32    | entry count                                       |
@@ -60,13 +60,19 @@ Following the WAD header is the directory entry.
 | Pos | Size | Format | Description                            |
 | ---:| ----:| ------ | -------------------------------------- |
 |   0 |  256 |        | ECDSA signature                        |
-| 256 |    8 |        | XXH64 checksum                         |
+| 256 |    8 |        | [header checksum](#header-checksum)    |
 | 264 |    4 | u32    | entry count                            |
 
 This header provides the number of entries in the WAD archive.
 [Entry headers](#entry-headers) immediately follow the directory header and are
 contiguous.
 
+
+## Header checksum
+
+Not present for entry headers before wad version 2.
+Checksum in WAD archives are hashed using 64-bit XXH64 with seed 0.
+Hashing [Entry headers](#entry-headers) ordered by their ``data offset in the WAD archive`` will produce this checksum.
 
 ## Entry headers
 
